@@ -10,10 +10,10 @@ export default function Home() {
     <div className="bg-white h-full overflow-hidden">
       <Header />
       <main>
- <Hero /> 
- <About />
- <OurGroup />
- <Companies />
+        <Hero /> 
+        <About />
+        <OurGroup />
+        <Companies />
       </main>
       <Footer />
     </div>

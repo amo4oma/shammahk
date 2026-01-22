@@ -52,9 +52,9 @@ const OurGroup = () => {
             scrollTrigger: {
                 trigger: ".our-group",
                 start: "top top",
-                end: "+=5000",
-                scrub: 1.5,
-                pin: true,
+                end: "+=4000",
+                scrub: true,
+                pin: true
             }
         });
 
@@ -87,11 +87,11 @@ const OurGroup = () => {
             .fromTo(wheatP3.current, { opacity: 0 }, { opacity: 1, duration: 1 }, "<")
             .to([wheat3Ref.current, wheatP3.current], { opacity: 0, duration: 1 }, "+=1")
             .to(wheatContainer.current, { opacity: 0, duration: 0.5 })
- 
+
 
         // MODERN CONTAINER ANIMATIONS
         masterTimeline
-           
+
             .to(modernContainer.current, { opacity: 1, duration: 0.5 })
             .fromTo(modernRef.current, { opacity: 0 }, { opacity: 1, duration: 1 })
             .fromTo(modernP1.current, { opacity: 0 }, { opacity: 1, duration: 1 }, "<")
@@ -117,43 +117,42 @@ const OurGroup = () => {
             .fromTo(leatherP3.current, { opacity: 0 }, { opacity: 1, duration: 1 })
             .to(leatherP3.current, { opacity: 0, duration: 1 }, "+=1")
             .fromTo(leatherRef5.current, { opacity: 0 }, { opacity: 1, duration: 1 })
-            .to(yellowLeafRef.current, { opacity: 0 })
-            .to(leatherContainer.current, { opacity: 0, duration: 0.5 })
-            
-            
+
+
+
 
     }, []);
     return (
         <div className="our-group  transition-all ease-in-out  relative text-center md:px-24 px-4 py-24 h-screen" dir="rtl">
-                <Image src={yellowLeaf} alt="yellowLeaf"  className="w-[70%] rotate-90 absolute top-[0%] end-[-30%] object-contain" ref={yellowLeafRef} />
+            <Image src={yellowLeaf} alt="yellowLeaf" className="w-[70%] rotate-90 absolute top-[0%] end-[-30%] object-contain" ref={yellowLeafRef} />
             <h1 className="text-5xl mb-20 md:text-7xl text-text-shadow-lg/30 font-extrabold text-primary font-beiruti leading-tight">مجموعتنا</h1>
             <div ref={wheatContainer} className="wheat-container absolute top-12 left-0 w-full pt-32 md:px-24 px-4">
                 <h3 ref={title} className="text-2xl md:text-4xl text-text-shadow-lg/30 font-extrabold text-secondary font-beiruti leading-tight mb-8">الشركه العربيه لصوامع الغلال</h3>
-                <div className="md:grid md:grid-cols-2 gap-8 items-center h-[450px]">
+                <div className="md:grid md:grid-cols-2 gap-8 items-center md:h-[450px] h-[250px]">
                     <div className="relative h-full">
-                        <Image ref={wheat1Ref} className="absolute rounded-3xl object-cover w-full h-full" src={wheat1} alt="wheat" />
-                        <Image ref={wheat2Ref} className="absolute rounded-3xl object-cover w-full h-full" src={wheat2} alt="wheat" />
-                        <Image ref={wheat3Ref} className="absolute rounded-3xl object-cover w-full h-full" src={wheat3} alt="wheat" />
+                        <Image ref={wheat1Ref} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={wheat1} alt="wheat" />
+                        <Image ref={wheat2Ref} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={wheat2} alt="wheat" />
+                        <Image ref={wheat3Ref} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={wheat3} alt="wheat" />
                     </div>
-                    <div className="flex justify-center items-center h-full relative w-3/4">
-                        <p ref={wheatP1} className="text-4xl font-beiruti font-medium text-center">واحده من اهم انجازات مجموعه شماخ هي الشركه العربيه لصوامع الغلال ومطاحن الدقيق المحدوده</p>
-                        <p ref={wheatP2} className="text-4xl font-beiruti font-medium text-center">تُعد الشركة جزءاً من التوسع الصناعي لمجموعة شماخ، التي بدأت نشاطها في اليمن منذ عام 1950</p>
-                        <p ref={wheatP3} className="text-4xl font-beiruti font-medium text-center">تخصص الشركة في استيراد القمح وطحنه وتعبئته، وإنتاج مختلف أنواع الدقيق والمنتجات المشتقة من القمح للسوق اليمني.</p>
+                    <div className="flex justify-center items-center h-full relative md:w-3/4 w-full">
+                        <p ref={wheatP1} className="md:text-4xl text-2xl font-beiruti font-medium text-center">واحده من اهم انجازات مجموعه شماخ هي الشركه العربيه لصوامع الغلال ومطاحن الدقيق المحدوده</p>
+                        <p ref={wheatP2} className="md:text-4xl text-2xl font-beiruti font-medium text-center">تُعد الشركة جزءاً من التوسع الصناعي لمجموعة شماخ، التي بدأت نشاطها في اليمن منذ عام 1950</p>
+                        <p ref={wheatP3} className="md:text-4xl text-2xl font-beiruti font-medium text-center">تخصص الشركة في استيراد القمح وطحنه وتعبئته، وإنتاج مختلف أنواع الدقيق والمنتجات المشتقة من القمح للسوق اليمني.</p>
 
                     </div>
                 </div>
             </div>
             <div ref={modernContainer} className="modern-home-container absolute top-12 left-0 w-full pt-32 md:px-24 px-4">
                 <h3 ref={modernTitle} className="text-4xl md:text-4xl text-text-shadow-lg/30 font-extrabold text-secondary font-beiruti leading-tight mb-8">معرض البيت الحديث</h3>
-                <div className="md:grid md:grid-cols-2 gap-8 items-center h-[450px]">
+                <div className="md:grid md:grid-cols-2 gap-8 items-center md:h-[450px] h-[250px]">
                     <div className="relative h-full">
-                        <Image ref={modernRef} className="absolute rounded-3xl object-cover w-full h-full" src={modern1} alt="wheat" />
-                        <Image ref={modernRef2} className="absolute rounded-3xl object-cover w-full h-full" src={modern2} alt="wheat" />
+                        <Image ref={modernRef} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={modern1} alt="wheat" />
+                        <Image ref={modernRef2} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={modern2} alt="wheat" />
 
                     </div>
-                    <div className="flex justify-center items-center h-full relative w-3/4">
-                        <p ref={modernP1} className="text-4xl font-beiruti font-medium text-center">تُعد شركة شماخ للدباغة والصناعات الجلدية المحدودة واحدة من الشركات الرائدة في مجال الصناعات الجلدية في اليمن.</p>
-                        <p ref={modernP2} className="text-4xl font-beiruti font-medium text-center">تأسست الشركة بهدف تلبية احتياجات السوق المحلي من المنتجات الجلدية عالية الجودة، وتعتمد على أحدث التقنيات والمعدات في عمليات الدباغة والتشطيب.</p>
+                    <div className="flex justify-center items-center h-full relative md:w-3/4 w-full">
+                        <p ref={modernP1} className="md:text-4xl text-2xl font-beiruti font-medium text-center">تُعد شركة شماخ للدباغة والصناعات الجلدية المحدودة واحدة من الشركات الرائدة في مجال الصناعات الجلدية في اليمن.</p>
+                        <p ref={modernP2} className="md:text-4xl text-2xl font-beiruti font-medium text-center">تأسست الشركة بهدف تلبية احتياجات السوق المحلي من المنتجات الجلدية عالية الجودة، وتعتمد على أحدث التقنيات والمعدات في عمليات الدباغة والتشطيب.</p>
 
 
                     </div>
@@ -161,18 +160,18 @@ const OurGroup = () => {
             </div>
             <div ref={leatherContainer} className="leather-container absolute top-12 left-0 w-full pt-32 md:px-24 px-4">
                 <h3 ref={leatherTitle} className="text-4xl md:text-4xl text-text-shadow-lg/30 font-extrabold text-secondary font-beiruti leading-tight mb-8">شركة شماخ للدباغه والصناعات الجلديه</h3>
-                <div className="md:grid md:grid-cols-2 gap-8 items-center h-[450px]">
+                <div className="md:grid md:grid-cols-2 gap-8 items-center md:h-[450px] h-[250px]">
                     <div className="relative h-full">
-                        <Image ref={leatherRef} className="absolute rounded-3xl object-cover w-full h-full" src={leather1} alt="wheat" />
-                        <Image ref={leatherRef3} className="absolute rounded-3xl object-cover w-full h-full" src={leather3} alt="wheat" />
-                        <Image ref={leatherRef4} className="absolute rounded-3xl object-cover w-full h-full" src={leather4} alt="wheat" />
-                        <Image ref={leatherRef5} className="absolute rounded-3xl object-cover w-full h-full" src={leather5} alt="wheat" />
+                        <Image ref={leatherRef} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={leather1} alt="wheat" />
+                        <Image ref={leatherRef3} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={leather3} alt="wheat" />
+                        <Image ref={leatherRef4} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={leather4} alt="wheat" />
+                        <Image ref={leatherRef5} className="absolute rounded-3xl object-cover md:w-full w-full md:h-full h-full" src={leather5} alt="wheat" />
 
                     </div>
-                    <div className="flex justify-center items-center h-full  relative w-3/4">
-                        <p ref={leatherP1} className="text-4xl font-beiruti font-medium text-center">تُعد شركة شماخ للدباغة والصناعات الجلدية المحدودة إحدى الركائز الصناعية لمجموعة "سالم محمد شماخ وشركاه" في اليمن، وهي من أوائل الشركات التي استثمرت في تحويل الموارد المحلية إلى منتجات صناعية.</p>
-                        <p ref={leatherP2} className="text-4xl font-beiruti font-medium text-center">يقع المصنع في مدينة الحديدة (طريق جيزان، كيلو 25). تتخصص الشركة في دباغة جلود الأغنام والماعز والأبقار وتحويلها من جلود خام إلى جلود جاهزة للتصنيع أو التصدير (مثل جلود Pickled وWetblue).</p>
-                        <p ref={leatherP3} className="text-4xl font-beiruti font-medium text-center">تعتمد الشركة بشكل كبير على التصدير، حيث تشكل الصادرات ما بين 85% إلى 90% من إجمالي إنتاجها، وتصل منتجاتها إلى أسواق دولية مثل إندونيسيا، سوريا، والسعودية.</p>
+                    <div className="flex justify-center items-center h-full  relative md:w-3/4 w-full">
+                        <p ref={leatherP1} className="md:text-4xl text-2xl font-beiruti font-medium text-center">تُعد شركة شماخ للدباغة والصناعات الجلدية المحدودة إحدى الركائز الصناعية لمجموعة "سالم محمد شماخ وشركاه" في اليمن، وهي من أوائل الشركات التي استثمرت في تحويل الموارد المحلية إلى منتجات صناعية.</p>
+                        <p ref={leatherP2} className="md:text-4xl text-2xl font-beiruti font-medium text-center">يقع المصنع في مدينة الحديدة (طريق جيزان، كيلو 25). تتخصص الشركة في دباغة جلود الأغنام والماعز والأبقار وتحويلها من جلود خام إلى جلود جاهزة للتصنيع أو التصدير (مثل جلود Pickled وWetblue).</p>
+                        <p ref={leatherP3} className="md:text-4xl text-2xl font-beiruti font-medium text-center">تعتمد الشركة بشكل كبير على التصدير، حيث تشكل الصادرات ما بين 85% إلى 90% من إجمالي إنتاجها، وتصل منتجاتها إلى أسواق دولية مثل إندونيسيا، سوريا، والسعودية.</p>
 
                     </div>
                 </div>
