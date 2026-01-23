@@ -28,6 +28,7 @@ import mobileTuna from "../../public/images/mobile-tuan.png"
 
 // ScrollSmoother requires ScrollTrigger
 import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { ProductsMarquee } from '@/components/ui/ProductsMarquee';
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP); // register the hook to avoid React version discrepancies 
 
@@ -204,7 +205,7 @@ const Hero = () => {
         </div>
 
         {/* Mobile Image Parallax Section */}
-        <div className="px-3 pb-8 space-y-4">
+        {/* <div className="px-3 pb-8 space-y-4">
           {mobileImages.map((img, index) => (
             <motion.div
               key={index}
@@ -235,7 +236,8 @@ const Hero = () => {
               />
             </motion.div>
           ))}
-        </div>
+        </div> */}
+        <ProductsMarquee />
       </div>
     </>
   );
