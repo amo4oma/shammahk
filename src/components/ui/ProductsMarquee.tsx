@@ -24,19 +24,19 @@ import mobileTuna from "../../public/images/mobile-tuan.png"
 
 const reviews = [
   {
-
+    name:"whaet",
     img: mobileWheat,
   },
   {
-
+    name:"rice",
     img: mobileRice,
   },
   {
-
+    name:"beans",
     img: mobileBeans,
   },
   {
-
+    name:"tuna",
     img: mobileTuna,
   }
 
@@ -75,12 +75,12 @@ export function ProductsMarquee() {
     <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden">
       <Marquee pauseOnHover vertical className="[--duration:20s]">
         {firstRow.map((review) => (
-          <ReviewCard key={review.img} {...review} />
+          <ReviewCard key={`first-${review.name}-${index}`} {...review} />
         ))}
       </Marquee>
         <Marquee pauseOnHover reverse vertical className="[--duration:20s]">
             {firstRow.map((review) => (
-            <ReviewCard key={review.img} {...review} />
+            <ReviewCard key={`second-${review.name}-${index}`} {...review} />
             ))}
         </Marquee>
  
