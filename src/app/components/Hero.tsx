@@ -20,10 +20,7 @@ import leaf from "../../public/images/الشكل-الجمالي-31.png"
 import leaf2 from "../../public/images/الشكل-الجمالي-1-2.png"
 import Image from 'next/image';
 
-import mobileWheat from "../../public/images/mobile-whest.png"
-import mobileRice from "../../public/images/mobile-rice.png"
-import mobileBeans from "../../public/images/mobile-beans.png"
-import mobileTuna from "../../public/images/mobile-tuan.png"
+
 
 
 // ScrollSmoother requires ScrollTrigger
@@ -102,14 +99,7 @@ const Hero = () => {
 
   }, { scope: containerRef, dependencies: [isMobile] });
 
-  // Mobile images array for grid display
-  const mobileImages = [
-    { src: mobileWheat, alt: "خيرات اليمن" },
-    { src: mobileRice, alt: "الخريف" },
-    { src: mobileBeans, alt: "قيصر" },
-    { src: mobileTuna, alt: "ارز شماخ" },
 
-  ];
 
   return (
     <>
@@ -169,7 +159,7 @@ const Hero = () => {
       {/* Mobile Layout */}
       <div className="md:hidden min-h-screen bg-linear-to-t from-[#768E76]-200 to-[#768E76]" dir="rtl">
         {/* Mobile Text Content */}
-        <div className="container mx-auto  px-4 pt-32 pb-8 flex flex-col items-center justify-center text-center">
+        <div className="container mx-auto px-4 pt-24 pb-6 flex flex-col items-center justify-center text-center">
           <motion.h1
             key={`title-mobile`}
             initial={{ opacity: 0, y: 20 }}
@@ -204,40 +194,183 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Mobile Image Parallax Section */}
-        {/* <div className="px-3 pb-8 space-y-4">
-          {mobileImages.map((img, index) => (
+        {/* Floating Products Showcase */}
+        <div className="relative w-full px-4 pb-8 overflow-hidden">
+          {/* Decorative gradient overlay */}
+          <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-white/20 pointer-events-none z-10" />
+
+          {/* Scattered floating products grid */}
+          <div className="relative flex flex-wrap justify-center items-center gap-3 max-w-sm mx-auto">
+            {/* Row 1 - 3 products with varying sizes and animations */}
             <motion.div
-              key={index}
-              initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -100 : 100,
-                y: 50
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-                y: 0
-              }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{
-                duration: 0.8,
-                ease: "easeOut",
-                delay: 0.1
-              }}
-              className="relative w-full"
+              initial={{ opacity: 0, scale: 0, rotate: -15 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.6, delay: 1.0, type: "spring", stiffness: 200 }}
+              className="relative w-24 h-24 -mt-2"
             >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={400}
-                height={400}
-                className="object-contain w-full h-auto"
-              />
+              <motion.div
+                animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="w-full h-full"
+              >
+                <Image src={qaisar} alt="قيصر" className="w-full h-full object-contain drop-shadow-xl" />
+              </motion.div>
             </motion.div>
-          ))}
-        </div> */}
-        <ProductsMarquee />
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0, rotate: 10 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.6, delay: 1.2, type: "spring", stiffness: 200 }}
+              className="relative w-28 h-28 mt-4"
+            >
+              <motion.div
+                animate={{ y: [0, -6, 0], rotate: [0, -2, 0] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs} alt="ارز شماخ" className="w-full h-full object-contain drop-shadow-xl" />
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0, rotate: -8 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.6, delay: 1.4, type: "spring", stiffness: 200 }}
+              className="relative w-24 h-24 -mt-1"
+            >
+              <motion.div
+                animate={{ y: [0, -10, 0], rotate: [0, 3, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 0.3 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs2} alt="ارز البيت" className="w-full h-full object-contain drop-shadow-xl" />
+              </motion.div>
+            </motion.div>
+
+            {/* Row 2 - Larger hero products */}
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 1.6, type: "spring", stiffness: 150 }}
+              className="relative w-32 h-32 -ml-2"
+            >
+              <motion.div
+                animate={{ y: [0, -5, 0], scale: [1, 1.02, 1] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="w-full h-full"
+              >
+                <Image src={imgs8} alt="الخريف" className="w-full h-full object-contain drop-shadow-2xl" />
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.8 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 1.8, type: "spring", stiffness: 150 }}
+              className="relative w-32 h-32"
+            >
+              <motion.div
+                animate={{ y: [0, -7, 0], scale: [1, 1.03, 1] }}
+                transition={{ duration: 3.8, repeat: Infinity, ease: "easeInOut", delay: 0.8 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs11} alt="خيرات اليمن" className="w-full h-full object-contain drop-shadow-2xl" />
+              </motion.div>
+            </motion.div>
+
+            {/* Row 3 - Mixed sizes */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0, x: -30 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 2.0, type: "spring", stiffness: 180 }}
+              className="relative w-20 h-20"
+            >
+              <motion.div
+                animate={{ y: [0, -6, 0], rotate: [0, -3, 0] }}
+                transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs3} alt="ارز الفارس النبيل" className="w-full h-full object-contain drop-shadow-lg" />
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0, y: 30 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 2.2, type: "spring", stiffness: 180 }}
+              className="relative w-24 h-24"
+            >
+              <motion.div
+                animate={{ y: [0, -8, 0], rotate: [0, 2, 0] }}
+                transition={{ duration: 3.2, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs4} alt="بازلياء خضراء" className="w-full h-full object-contain drop-shadow-lg" />
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0, x: 30 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 2.4, type: "spring", stiffness: 180 }}
+              className="relative w-20 h-20"
+            >
+              <motion.div
+                animate={{ y: [0, -5, 0], rotate: [0, -2, 0] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.4 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs6} alt="العطية" className="w-full h-full object-contain drop-shadow-lg" />
+              </motion.div>
+            </motion.div>
+
+            {/* Row 4 - Bottom products */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0, rotate: 15 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.5, delay: 2.6, type: "spring", stiffness: 200 }}
+              className="relative w-22 h-22"
+            >
+              <motion.div
+                animate={{ y: [0, -7, 0], rotate: [0, 3, 0] }}
+                transition={{ duration: 2.6, repeat: Infinity, ease: "easeInOut", delay: 0.9 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs7} alt="التونه" className="w-full h-full object-contain drop-shadow-lg" />
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0, rotate: -12 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.5, delay: 2.8, type: "spring", stiffness: 200 }}
+              className="relative w-22 h-22"
+            >
+              <motion.div
+                animate={{ y: [0, -6, 0], rotate: [0, -2, 0] }}
+                transition={{ duration: 3.4, repeat: Infinity, ease: "easeInOut", delay: 0.1 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs9} alt="فاصوليا بيضاء" className="w-full h-full object-contain drop-shadow-lg" />
+              </motion.div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0, rotate: 8 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 0.5, delay: 3.0, type: "spring", stiffness: 200 }}
+              className="relative w-22 h-22"
+            >
+              <motion.div
+                animate={{ y: [0, -9, 0], rotate: [0, 2, 0] }}
+                transition={{ duration: 2.9, repeat: Infinity, ease: "easeInOut", delay: 0.7 }}
+                className="w-full h-full"
+              >
+                <Image src={imgs10} alt="فاصوليا حمراء" className="w-full h-full object-contain drop-shadow-lg" />
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </>
   );
