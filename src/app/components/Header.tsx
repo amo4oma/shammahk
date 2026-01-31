@@ -26,12 +26,13 @@ const Header = () => {
           <Image width={150} src={logo} alt="logo" />
         </div>
 
-        <nav className="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
-          <a href="#" className="text-gray-600 hover:text-primary transition-colors">الرئيسية</a>
-          <a href="#sectors" className="text-gray-600 hover:text-primary transition-colors">قطاعاتنا</a>
-          <a href="#brands" className="text-gray-600 hover:text-primary transition-colors">شركاؤنا</a>
-          <a href="#about" className="text-gray-600 hover:text-primary transition-colors">عن المجموعة</a>
-          <a href="#contact" className="text-gray-600 hover:text-primary transition-colors">اتصل بنا</a>
+        <nav className="hidden md:flex items-center gap-10 ltr:space-x-reverse font-beiruti">
+          <a href="/" className="text-black font-bold hover:text-primary transition-colors">الرئيسية</a>
+          <a href="/about" className="text-black font-bold hover:text-primary transition-colors">عن المجموعة</a>
+          <a href="/#sectors" className="text-black font-bold hover:text-primary transition-colors">قطاعاتنا</a>
+          <a href="/#brands" className="text-black font-bold hover:text-primary transition-colors">شركاؤنا</a>
+
+          <a href="/contact-us" className="text-black font-bold hover:text-primary transition-colors">اتصل بنا</a>
         </nav>
 
         <div className="flex items-center">

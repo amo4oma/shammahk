@@ -24,10 +24,10 @@ const Companies = () => {
     return (
         <div className='mx-auto relative md:mt-[111px] h-full overflow-hidden' dir='ltr'>
             <h2 className='hidden md:block text-5xl md:text-7xl font-extrabold text-primary font-beiruti leading-tight text-center mb-16' dir='rtl'>
-                شُركاؤنا
+                وكالاتنا
             </h2>
             <h2 className='block md:hidden absolute top-20 z-40 end-10  text-5xl md:text-7xl font-extrabold text-primary font-beiruti leading-tight text-center mb-16' dir='rtl'>
-                شُركاؤنا
+                وكالاتنا
             </h2>
 
             <div className='hidden md:block relative w-full py-8'>
