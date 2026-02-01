@@ -17,7 +17,7 @@ import tefal from "../../public/images/Tefal_logo.svg";
 import general from "../../public/images/general-trad.jpg";
 import IMG from "../../public/images/IMG_3632.png";
 import metal from "../../public/images/metal.jpg";
-import castrol from "../../public/images/castrol.webp"
+import castrol from "../../public/images/caltex-oils.png"
 import tegog from "../../public/images/tego9.webp";
 import jmc from "../../public/images/JMC.png";
 import karryLogo from "../../public/images/karrylogo.png";

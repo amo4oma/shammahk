@@ -57,10 +57,11 @@ const Header = () => {
           className="md:hidden bg-white py-4"
         >
           <a href="#" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">الرئيسية</a>
+          <a href="/about" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">عن المجموعة</a>
           <a href="#sectors" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">قطاعاتنا</a>
           <a href="#brands" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">شركاؤنا</a>
-          <a href="#about" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">عن المجموعة</a>
-          <a href="#contact" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">اتصل بنا</a>
+      
+          <a href="/contact-us" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">اتصل بنا</a>
         </motion.div>
       )}
     </motion.header>

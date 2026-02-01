@@ -10,6 +10,7 @@ import lg from "../../public/images/LG_logo_(2014).svg.png";
 import westpoint from "../../public/images/westpoint-logo-png-transparent.png";
 import rowenta from "../../public/images/Rowenta_logo.svg.png";
 import {Marquee3D} from "@/components/ui/3DMqrquee";
+import caltexlLogo from "../../public/images/Castrol_logo_2023.svg.png"
 const Companies = () => {
     const companies = [
         { name: "Tefal", logo: tefal },
@@ -19,6 +20,7 @@ const Companies = () => {
         { name: "LG", logo: lg },
         { name: "Westpoint", logo: westpoint },
         { name: "Rowenta", logo: rowenta },
+        { name: "Clatex", logo:caltexlLogo}
     ];
 
     return (
