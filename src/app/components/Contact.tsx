@@ -8,15 +8,15 @@ const Contact = ()=>{
                   <h2 className="text-6xl font-bold text-center text-primary font-beiruti ">اتصل بنا</h2>
             <p className="text-black text-2xl font-beiruti text-center max-w-2xl mx-auto">تواصل معنا في مجموعة الشماخ، رضاكم هو أولويتنا. فريقنا متاح دائماً لتقديم الدعم الفني والاستشارات التجارية. تواصل معنا عبر الموقع، أو بشكل أسرع عبر النقر على زر الواتساب.</p>
         <motion.div    animate={{ y: [0, -15, 0], scale: [1, 1.02, 1] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="absolute top-5 right-[40%] flex justify-center items-center bg-accent/20 p-2 rounded-full">
+                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }} className="absolute top-5  right-[70%] md:right-[40%] flex justify-center items-center bg-accent/20 p-2 rounded-full">
                     <PhoneCall className=" text-primary" size={30} strokeWidth={2.5}/>
         </motion.div>
         <motion.div    animate={{ y: [0, -7, 0], scale: [1, 1.02, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="absolute top-5 right-[60%] flex justify-center items-center bg-accent/20 p-2 rounded-full">
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }} className="absolute top-5 right-48 md:right-[60%] flex justify-center items-center bg-accent/20 p-2 rounded-full">
                     <Send className=" text-primary" size={30} strokeWidth={2.5}/>
         </motion.div>
         <motion.div    animate={{ y: [0, -9, 0], scale: [1, 1.02, 1] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="absolute -bottom-10 right-[40%] flex justify-center items-center bg-accent/20 p-2 rounded-full">
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }} className="absolute -bottom-10 right-36 md:right-[40%] flex justify-center items-center bg-accent/20 p-2 rounded-full">
                     <MapPin className=" text-primary" size={30} strokeWidth={2.5}/>
         </motion.div>
             </motion.div>

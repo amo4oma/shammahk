@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Marquee from "react-fast-marquee";
-
+import { motion } from 'motion/react';
 import tefal from "../../public/images/Tefal_logo.svg";
 import chery from "../../public/images/Chery_logo.svg.png";
 import jmc from "../../public/images/JMC_Motor_logo.png";
@@ -32,7 +32,7 @@ const Companies = () => {
                 وكالاتنا
             </h2>
 
-            <div className='hidden md:block relative w-full py-8'>
+            <div className='hidden md:block text-center relative w-full py-8'>
                 <Marquee
                     speed={50}
                     gradient={false}
@@ -78,7 +78,21 @@ const Companies = () => {
                         </div>
                     ))}
                 </Marquee>
-            </div>
+        <motion.div
+            key={`button-mobile`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className='butn mt-4'
+          >
+            <a href="agents" className="relative inline-flex items-center justify-center px-5 py-2.5 text-base font-medium tracking-tighter text-white bg-transparent shadow rounded-md group skew-y-3">
+              <span className="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-accent rounded-md group-hover:mt-0 group-hover:ml-0"></span>
+              <span className="absolute inset-0 w-full h-full bg-primary  rounded-md "></span>
+              <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-in-out delay-100 bg-accent rounded-md opacity-0 group-hover:opacity-100 "></span>
+              <span className="relative font-bold text-white font-beiruti transition-colors duration-200 ease-in-out delay-100 group-hover:text-primary">اكتشف المزيد</span>
+            </a>
+          </motion.div>
+           </div>
             <div className="md:hidden">
                 <Marquee3D />
             </div>

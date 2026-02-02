@@ -26,22 +26,22 @@ const Header = () => {
           <Image width={150} src={logo} alt="logo" />
         </div>
 
-        <nav className="hidden md:flex items-center gap-10 ltr:space-x-reverse font-beiruti">
-          <a href="/" className="text-black font-bold hover:text-primary transition-colors">الرئيسية</a>
-          <a href="/about" className="text-black font-bold hover:text-primary transition-colors">عن المجموعة</a>
-          <a href="/#sectors" className="text-black font-bold hover:text-primary transition-colors">قطاعاتنا</a>
-          <a href="/#brands" className="text-black font-bold hover:text-primary transition-colors">شركاؤنا</a>
+        <nav className="hidden md:flex items-start gap-10 ltr:space-x-reverse font-beiruti">
+          <a href="/" className="text-black text-xl font-semibold hover:text-primary transition-colors">الرئيسية</a>
+          <a href="/about" className="text-black text-xl font-semibold hover:text-primary transition-colors">عن المجموعة</a>
+          {/* <a href="/#sectors" className="text-black font-semibold hover:text-primary transition-colors">قطاعاتنا</a> */}
+          <a href="/agents" className="text-black text-xl font-semibold hover:text-primary transition-colors">وكالاتنا</a>
 
-          <a href="/contact-us" className="text-black font-bold hover:text-primary transition-colors">اتصل بنا</a>
+          <a href="/contact-us" className="text-black text-xl font-semibold hover:text-primary transition-colors">اتصل بنا</a>
         </nav>
 
         <div className="flex items-center">
-          <button 
+          {/* <button 
             onClick={toggleLanguage}
             className="bg-primary text-white px-3 py-1 rounded-md text-sm font-medium"
           >
             {language === 'ar' ? 'EN' : 'AR'}
-          </button>
+          </button> */}
           <div className="md:hidden ml-4">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-gray-600 focus:outline-none">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
@@ -56,10 +56,10 @@ const Header = () => {
           animate={{ opacity: 1 }} 
           className="md:hidden bg-white py-4"
         >
-          <a href="#" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">الرئيسية</a>
+          <a href="/" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">الرئيسية</a>
           <a href="/about" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">عن المجموعة</a>
-          <a href="#sectors" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">قطاعاتنا</a>
-          <a href="#brands" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">شركاؤنا</a>
+          {/* <a href="#sectors" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">قطاعاتنا</a> */}
+          <a href="/agents" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">شركاؤنا</a>
       
           <a href="/contact-us" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">اتصل بنا</a>
         </motion.div>
