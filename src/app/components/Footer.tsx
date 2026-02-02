@@ -16,10 +16,12 @@ const Footer = () => {
           <div>
             <h3 className="text-xl text-black font-bold font-beiruti mb-4">الصفحات</h3>
             <ul>
-              <li><a href="#" className="text-gray-400 hover:text-primary">الرئيسية</a></li>
-              <li><a href="#sectors" className="text-gray-400 hover:text-primary">قطاعاتنا</a></li>
-              <li><a href="#brands" className="text-gray-400 hover:text-primary">شركاؤنا</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-primary">عن المجموعة</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-primary">الرئيسية</a></li>
+              <li><a href="/agents" className="text-gray-400 hover:text-primary">وكالاتنا</a></li>
+              
+              {/* <li><a href="/sectors" className="text-gray-400 hover:text-primary">قطاعاتنا</a></li> */}
+              <li><a href="/products" className="text-gray-400 hover:text-primary">منتجاتنا</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-primary">عن المجموعة</a></li>
             </ul>
           </div>
           <div>

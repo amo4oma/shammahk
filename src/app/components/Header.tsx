@@ -29,6 +29,7 @@ const Header = () => {
         <nav className="hidden md:flex items-start gap-10 ltr:space-x-reverse font-beiruti">
           <a href="/" className="text-black text-xl font-semibold hover:text-primary transition-colors">الرئيسية</a>
           <a href="/about" className="text-black text-xl font-semibold hover:text-primary transition-colors">عن المجموعة</a>
+          <a href="/products" className="text-black text-xl font-semibold hover:text-primary transition-colors">منتجاتنا</a>
           {/* <a href="/#sectors" className="text-black font-semibold hover:text-primary transition-colors">قطاعاتنا</a> */}
           <a href="/agents" className="text-black text-xl font-semibold hover:text-primary transition-colors">وكالاتنا</a>
 
@@ -58,6 +59,7 @@ const Header = () => {
         >
           <a href="/" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">الرئيسية</a>
           <a href="/about" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">عن المجموعة</a>
+          <a href="/products" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">منتجاتنا</a>
           {/* <a href="#sectors" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">قطاعاتنا</a> */}
           <a href="/agents" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">شركاؤنا</a>
       
