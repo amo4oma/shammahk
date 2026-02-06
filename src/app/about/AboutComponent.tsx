@@ -1,13 +1,12 @@
-"use client";
-import RootLayout from '../../app/layout'
-import SaherdHearoSection from '../../app/components/SaherdHearoSection'
+"use client"
+import SaherdHearoSection from '../components/SaherdHearoSection'
 import { motion } from 'motion/react';
 import { Eye, Target, MessageSquare } from 'lucide-react';
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-import { WavyBackground } from '../../app/components/ui/wavy-background';
+import { WavyBackground } from '../components/ui/wavy-background';
 import w1 from "../../public/images/صوامع1.jpg"
 import m1 from "../../public/images/modern2.jpg"
 import ariston from "../../public/images/Ariston-logo.png";
@@ -26,6 +25,7 @@ import JMCLogo from "../../public/images/JMC_Motor_logo.png"
 import klass from "../../public/images/klass.webp"
 import karry from "../../public/images/karry.png"
 import castrolLogo from "../../public/images/Castrol_logo_2023.svg.png"
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -71,7 +71,7 @@ const About = () => {
     }, []);
 
     return (
-        <RootLayout>
+ 
             <div dir='rtl' className="w-full h-full relative">
                 <div className="relative h-full top-20 left-0 w-full z-10">
                     <SaherdHearoSection title="عن المجموعة" />
@@ -578,7 +578,7 @@ const About = () => {
                     </section>
               
             </div>
-        </RootLayout>
+ 
     );
 };
 

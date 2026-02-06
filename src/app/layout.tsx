@@ -1,5 +1,4 @@
-"use client";
-import type { Metadata } from "next";
+
 import { Beiruti } from 'next/font/google';
 import './globals.css';
 import Header from "./components/Header";
@@ -11,7 +10,7 @@ const beiruti = Beiruti({
   display: 'swap',
 });
 
-
+ 
 
 export default function RootLayout({
   children,

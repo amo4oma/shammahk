@@ -17,7 +17,7 @@ const Footer = () => {
             <h3 className="text-xl text-black font-bold font-beiruti mb-4">الصفحات</h3>
             <ul>
               <li><a href="/" className="text-gray-400 hover:text-primary">الرئيسية</a></li>
-              <li><a href="/agents" className="text-gray-400 hover:text-primary">وكالاتنا</a></li>
+              <li><a href="/agencies" className="text-gray-400 hover:text-primary">وكالاتنا</a></li>
               
               {/* <li><a href="/sectors" className="text-gray-400 hover:text-primary">قطاعاتنا</a></li> */}
               <li><a href="/products" className="text-gray-400 hover:text-primary">منتجاتنا</a></li>

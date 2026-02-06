@@ -1,65 +1,109 @@
-"use client";
+"use client"
 import { useState } from "react";
 import SaherdHearoSection from "@/app/components/SaherdHearoSection";
 import RootLayout from "@/app/layout";
 import Image from "next/image";
-import albait from "../../public/images/our-products/albait.webp"
-import alarabia from "../../public/images/our-products/alarabia-logo.webp";
-
+import tefal from "../../public/images/Tefal_logo.svg";
+import chery from "../../public/images/Chery_logo.svg.png";
+import jmc from "../../public/images/JMC_Motor_logo.png";
+import ariston from "../../public/images/Ariston-logo.png";
+import lg from "../../public/images/LG_logo_(2014).svg.png";
+import westpoint from "../../public/images/westpoint-logo-png-transparent.png";
+import rowenta from "../../public/images/Rowenta_logo.svg.png";
+import caltexlLogo from "../../public/images/Castrol_logo_2023.svg.png";
+import karry from "../../public/images/karrylogo.png";
+ 
 // Product images
-import dageeg from "../../public/images/our-products/dageeg.webp"
-import kharrefProduct from "../../public/images/our-products/khareef-product.webp";
-import riceGroup from "../../public/images/our-products/rice-group.webp";
-import qaisar from "../../public/images/our-products/qaisar-rice.webp";
-import atiah from "../../public/images/our-products/ateiah-rice.webp"
-import aboMoftah from "../../public/images/our-products/abo-moftah-rice.webp"
-import redBewns from "../../public/images/our-products/red-beans.webp"
-import whaitBeans from "../../public/images/our-products/white-beans.webp"
-import bazalia from "../../public/images/our-products/bazalia.webp"
-import fole from "../../public/images/our-products/fole.webp"
-import sugar from "../../public/images/our-products/albait-rice.webp"
-import salsha from "../../public/images/our-products/salsa.webp"
-import mango from "../../public/images/our-products/mango-product.webp"
-import masilah from "../../public/images/our-products/masilah-rice.webp"
-import shammahkRice from "../../public/images/our-products/shammask-rice-pro.webp"
-import corn from "../../public/images/our-products/corn.webp"
-import tuna from "../../public/images/our-products/tuna.webp"
+import tefalProducts from "../../public/images/products/tefal_products.png";
+import tefalProducts2 from "../../public/images/products/tefal-2.webp";
+import cheryProducts from "../../public/images/products/chery_products.png";
+import jmcProducts from "../../public/images/products/jmc_products.png";
+import jmcProducts2 from "../../public/images/products/jmc-products.webp";
+import jmcProducts3 from "../../public/images/products/jmc-truck.webp";
+import aristonProducts from "../../public/images/products/ariston_products.png";
+import lgProducts from "../../public/images/products/lg_products.png";
+import lgProducts2 from "../../public/images/products/lg-3.webp";
+import lgProducts3 from "../../public/images/products/lg-4.webp";
+import lgProducts4 from "../../public/images/products/lg-5.webp";
+import westpointProducts from "../../public/images/products/westpoint_products.png";
+import westpointProducts2 from "../../public/images/products/westpoint-heater.webp";
+import rowentaProducts from "../../public/images/products/rowenta_products.png";
+import castrolProducts from "../../public/images/products/castrol_products.png";
+ 
+import karryProducts from "../../public/images/products/karry-1.webp";
+import karryProducts2 from "../../public/images/products/karry-2.webp";
 
-interface Product {
+ 
+interface Company {
     name: string;
     logo: any;
     products: any[];
     description: string;
 }
 
-const Products = () => {
-    const [selectedCompany, setSelectedCompany] = useState<Product | null>(null);
+const AgenciesComponent = () => {
+    const [selectedCompany, setSelectedCompany] = useState<Company | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const companies: Product[] = [
+    const companies: Company[] = [
         {
-            name: "الشركه العربيه لصوامع الغلال",
-            logo: alarabia,
-            products: [dageeg,kharrefProduct],
-            description: "حبوب ومطاحن الدقيق",
+            name: "Tefal",
+            logo: tefal,
+            products: [tefalProducts,tefalProducts2],
+            description: "أدوات المطبخ الفرنسية الرائدة عالمياً",
         },
         {
-            name: "منتجات البيت",
-            logo: albait,
-            products: [sugar, redBewns, whaitBeans, bazalia, salsha, mango , tuna, fole, corn],
-            description: "مجموعة منتجات البيت الغذائيه",
+            name: "Chery",
+            logo: chery,
+            products: [cheryProducts],
+            description: "سيارات صينية بتقنية متقدمة",
         },
         {
-            name: "منتحات الارز",
-            logo: riceGroup,
-            products: [qaisar,shammahkRice,aboMoftah,atiah, masilah],
-            description: "مجموعه من الارز الفاخر",
+            name: "JMC",
+            logo: jmc,
+            products: [jmcProducts,jmcProducts2,jmcProducts3],
+            description: "شاحنات ومركبات تجارية قوية",
         },
-  
+        {
+            name: "Karry",
+            logo: karry,
+            products: [karryProducts,karryProducts2],
+            description: "شاحنات ومركبات تجارية قوية",
+        },
+        {
+            name: "Ariston",
+            logo: ariston,
+            products: [aristonProducts],
+            description: "أنظمة التدفئة والمياه الإيطالية",
+        },
+        {
+            name: "LG",
+            logo: lg,
+            products: [lgProducts,lgProducts2,lgProducts3,lgProducts4],
+            description: "أجهزة منزلية وإلكترونيات متطورة",
+        },
+        {
+            name: "Westpoint",
+            logo: westpoint,
+            products: [westpointProducts,westpointProducts2],
+            description: "أجهزة المطبخ العملية والموثوقة",
+        },
+        {
+            name: "Rowenta",
+            logo: rowenta,
+            products: [rowentaProducts],
+            description: "أجهزة العناية بالمنزل الألمانية",
+        },
+        {
+            name: "Castrol",
+            logo: caltexlLogo,
+            products: [castrolProducts],
+            description: "زيوت المحركات الرائدة عالمياً",
+        },
     ];
 
-    const openModal = (product: Product) => {
-        setSelectedCompany(product);
+    const openModal = (company: Company) => {
+        setSelectedCompany(company);
         setIsModalOpen(true);
         document.body.style.overflow = "hidden";
     };
@@ -71,27 +115,27 @@ const Products = () => {
     };
 
     return (
-        <RootLayout>
+ <> 
             <div dir="rtl">
                 <div className="mt-20">
-                    <SaherdHearoSection title="المنتجات" />
+                    <SaherdHearoSection title="الوكالات" />
                 </div>
 
                 <div className="w-[90%] lg:w-[80%] mx-auto space-y-8 py-8">
                     <h2 className="text-primary text-center font-bold font-beiruti text-2xl md:text-3xl text-shadow-lg">
-                        منتجات المجموعه اعلى المعايير واجود المصادر
+                        جسور الجودة نحو المستقبل
                     </h2>
                     <p className="text-black font-semibold font-beiruti text-base md:text-xl text-center px-4">
-                        تعتبر مجموعة شماخ من الشركات الرائدة في مجال استيراد وتوزيع المواد الغذائية في اليمن، حيث تمتلك شبكة واسعة من الموردين الموثوقين من مختلف أنحاء العالم. وتتميز منتجات المجموعة بالجودة العالية والأسعار التنافسية، مما يجعلها الخيار المفضل للعديد من العملاء في السوق اليمني.
+                        بصفتنا وكيلاً حصرياً لأبرز الأسماء العالمية، نفخر في مجموعة شماخ بدورنا الريادي في نقل أفضل الخبرات والمنتجات الدولية إلى السوق المحلي. إن اختيارنا للشركاء يعتمد على الجودة والابتكار، سعياً منا لتعزيز تنافسية الاقتصاد اليمني وتقديم تجربة استثنائية للعميل ترتقي لمستوى المعايير العالمية
                     </p>
 
                     {/* Interactive Company Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 py-8">
-                        {companies.map((product, index) => (
+                        {companies.map((company, index) => (
                             <div
-                                key={product.name}
+                                key={company.name}
                                 className="company-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden"
-                                onClick={() => openModal(product)}
+                                onClick={() => openModal(company)}
                                 style={{
                                     animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                                 }}
@@ -103,17 +147,17 @@ const Products = () => {
                                 <div className="relative z-20 p-6 md:p-8 flex flex-col items-center justify-center min-h-[180px] md:min-h-[220px]">
                                     <div className="relative w-full h-24 md:h-32 mb-4 transform group-hover:scale-110 transition-transform duration-500">
                                         <Image
-                                            src={product.logo}
-                                            alt={product.name}
+                                            src={company.logo}
+                                            alt={company.name}
                                             fill
                                             className="object-contain filter group-hover:brightness-110 transition-all duration-500"
                                         />
                                     </div>
                                     <h3 className="text-lg md:text-xl font-bold font-beiruti text-gray-800 mb-2 group-hover:text-primary transition-colors duration-300">
-                                        {product.name}
+                                        {company.name}
                                     </h3>
                                     <p className="text-xs md:text-sm text-gray-600 text-center font-beiruti opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                        {product.description}
+                                        {company.description}
                                     </p>
                                 </div>
 
@@ -255,8 +299,8 @@ const Products = () => {
                     transform: translateY(-8px);
                 }
             `}</style>
-        </RootLayout>
+  </>
     );
 };
 
-export default Products;
+export default AgenciesComponent;

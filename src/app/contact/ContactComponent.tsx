@@ -1,9 +1,10 @@
-"use client";
+"use client"
 import SaherdHearoSection from "@/app/components/SaherdHearoSection";
 import RootLayout from "../../app/layout";
 import { motion } from "motion/react";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState } from "react";
+
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -28,7 +29,7 @@ const ContactUs = () => {
     };
 
     return (
-        <RootLayout>
+        <>
             <div dir="rtl" className="mt-20">
                 <SaherdHearoSection title="تواصل معنا" />
 
@@ -342,7 +343,7 @@ const ContactUs = () => {
                     </motion.div>
                 </section>
             </div>
-        </RootLayout>
+        </>
     );
 };
 

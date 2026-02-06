@@ -14,9 +14,9 @@ const Header = () => {
   };
 
   return (
-    <motion.header 
-      initial={{ y: -100 }} 
-      animate={{ y: 0 }} 
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className="bg-white/80 w-[80%] rounded-3xl mx-auto mt-3 backdrop-blur-md shadow-md fixed translate-x-1/9  top-0 z-50"
       dir={language === 'ar' ? 'rtl' : 'ltr'}
@@ -31,9 +31,9 @@ const Header = () => {
           <a href="/about" className="text-black text-xl font-semibold hover:text-primary transition-colors">عن المجموعة</a>
           <a href="/products" className="text-black text-xl font-semibold hover:text-primary transition-colors">منتجاتنا</a>
           {/* <a href="/#sectors" className="text-black font-semibold hover:text-primary transition-colors">قطاعاتنا</a> */}
-          <a href="/agents" className="text-black text-xl font-semibold hover:text-primary transition-colors">وكالاتنا</a>
+          <a href="/agencies" className="text-black text-xl font-semibold hover:text-primary transition-colors">وكالاتنا</a>
 
-          <a href="/contact-us" className="text-black text-xl font-semibold hover:text-primary transition-colors">اتصل بنا</a>
+          <a href="/contact" className="text-black text-xl font-semibold hover:text-primary transition-colors">اتصل بنا</a>
         </nav>
 
         <div className="flex items-center">
@@ -52,18 +52,18 @@ const Header = () => {
       </div>
 
       {isMenuOpen && (
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           className="md:hidden bg-white py-4"
         >
           <a href="/" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">الرئيسية</a>
           <a href="/about" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">عن المجموعة</a>
           <a href="/products" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">منتجاتنا</a>
           {/* <a href="#sectors" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">قطاعاتنا</a> */}
-          <a href="/agents" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">شركاؤنا</a>
-      
-          <a href="/contact-us" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">اتصل بنا</a>
+          <a href="/agencies" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">شركاؤنا</a>
+
+          <a href="/contact" className="block px-6 py-2 text-gray-600 hover:bg-gray-100">اتصل بنا</a>
         </motion.div>
       )}
     </motion.header>
