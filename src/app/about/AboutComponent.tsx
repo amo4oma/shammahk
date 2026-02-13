@@ -230,6 +230,20 @@ const About = () => {
                                 <p className="text-lg md:text-xl font-beiruti text-gray-700 leading-relaxed">
                                     واحدة من أهم إنجازات مجموعة شماخ هي الشركة العربية لصوامع الغلال ومطاحن الدقيق المحدودة. تُعد الشركة جزءاً من التوسع الصناعي لمجموعة شماخ، التي بدأت نشاطها في اليمن منذ عام 1950. تتخصص الشركة في استيراد القمح وطحنه وتعبئته، وإنتاج مختلف أنواع الدقيق والمنتجات المشتقة من القمح للسوق اليمني.
                                 </p>
+                                    <motion.div
+                                            key={`button-mobile`}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            transition={{ duration: 0.8, delay: 0.8 }}
+                                            className='butn mt-4 flex justify-center'
+                                          >
+                                            <a href="grain" className="relative inline-flex items-center justify-center px-5 py-2.5 text-base font-medium tracking-tighter text-white bg-transparent shadow rounded-md group skew-y-3">
+                                              <span className="absolute inset-0 w-full h-full mt-1 ml-1 transition-all duration-300 ease-in-out bg-accent rounded-md group-hover:mt-0 group-hover:ml-0"></span>
+                                              <span className="absolute inset-0 w-full h-full bg-primary  rounded-md "></span>
+                                              <span className="absolute inset-0 w-full h-full transition-all duration-200 ease-in-out delay-100 bg-accent rounded-md opacity-0 group-hover:opacity-100 "></span>
+                                              <span className="relative font-bold text-white font-beiruti transition-colors duration-200 ease-in-out delay-100 group-hover:text-primary">اكتشف المزيد</span>
+                                            </a>
+                                          </motion.div>
                             </div>
                         </motion.div>
 
