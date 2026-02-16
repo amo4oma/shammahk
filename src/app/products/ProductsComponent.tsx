@@ -1,11 +1,11 @@
 "use client"
 import { useState } from "react";
 import SaherdHearoSection from "@/app/components/SaherdHearoSection";
- 
+
 import Image from "next/image";
 import albait from "../../public/images/our-products/albait.webp"
 import alarabia from "../../public/images/our-products/alarabia-logo.webp";
-
+import { products } from "../data/data";
 // Product images
 import dageeg from "../../public/images/our-products/dageeg.webp"
 import kharrefProduct from "../../public/images/our-products/khareef-product.webp";
@@ -41,22 +41,22 @@ const Products = () => {
         {
             name: "الشركه العربيه لصوامع الغلال",
             logo: alarabia,
-            products: [dageeg,kharrefProduct],
+            products: [dageeg, kharrefProduct],
             description: "حبوب ومطاحن الدقيق",
         },
         {
             name: "منتجات البيت",
             logo: albait,
-            products: [sugar, redBewns, whaitBeans, bazalia, salsha, mango , tuna, fole, corn],
+            products: [sugar, redBewns, whaitBeans, bazalia, salsha, mango, tuna, fole, corn],
             description: "مجموعة منتجات البيت الغذائيه",
         },
         {
             name: "منتحات الارز",
             logo: riceGroup,
-            products: [qaisar,shammahkRice,aboMoftah,atiah, masilah],
+            products: [qaisar, shammahkRice, aboMoftah, atiah, masilah],
             description: "مجموعه من الارز الفاخر",
         },
-  
+
     ];
 
     const openModal = (product: Product) => {
@@ -72,7 +72,7 @@ const Products = () => {
     };
 
     return (
- <>
+        <>
             <div dir="rtl">
                 <div className="mt-20">
                     <SaherdHearoSection title="المنتجات" />
@@ -85,6 +85,41 @@ const Products = () => {
                     <p className="text-black font-semibold font-beiruti text-base md:text-xl text-center px-4">
                         تعتبر مجموعة شماخ من الشركات الرائدة في مجال استيراد وتوزيع المواد الغذائية في اليمن، حيث تمتلك شبكة واسعة من الموردين الموثوقين من مختلف أنحاء العالم. وتتميز منتجات المجموعة بالجودة العالية والأسعار التنافسية، مما يجعلها الخيار المفضل للعديد من العملاء في السوق اليمني.
                     </p>
+
+                    <div className="flex flex-wrap justify-center gap-4">
+                        {products.map((product, index) => (
+                            <div
+                                key={product.id}
+                                className="company-card group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer overflow-hidden"
+
+                                style={{
+                                    animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
+                                }}
+                            >
+
+                                {/* Gradient overlay on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/0 to-primary/0 group-hover:from-primary/5 group-hover:to-primary/10 transition-all duration-500 z-10"></div>
+
+                                {/* Card content */}
+                                <div className="relative z-20 p-6 md:p-8 flex flex-col items-center justify-center min-h-[300px] md:min-h-[320px]">
+                                    <div className="relative w-72 h-72 mb-4 transform group-hover:scale-110 transition-transform duration-500">
+                                        <Image
+                                            src={product.image}
+                                            alt={product.title}
+                                            fill
+                                            className="object-contain w-full h-full"
+                                        />
+                                    </div>
+                                    <h3 className="text-primary font-bold font-beiruti text-lg md:text-xl mb-2">
+                                        {product.title}
+                                    </h3>
+                                    <p className="text-black font-semibold font-beiruti text-base md:text-xl text-center px-4">
+                                        {product.content}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
 
                     {/* Interactive Company Grid */}
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 py-8">

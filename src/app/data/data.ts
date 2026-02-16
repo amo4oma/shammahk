@@ -1,5 +1,6 @@
 import imgs1 from "../../public/images/news-image.webp";
 import imgs2 from "../../public/images/news2-image.webp";
+
 export default [
     {
         id: 1,
@@ -13,5 +14,92 @@ export default [
         image:imgs2,
         content: "اعلنت شركة شماخ عن استراتيجية جديدة مع شركة شيري الصينية لسنوات القادمة ، تهدف إلى توسيع شبكة التوزيع وتعزيز خدمات المبيعات والصيانة في السوق اليمني، ضمن خطة لتوفير أحدث موديلات شيري بمعايير أداء وتقنيات عالمي واسعار متناولة للجميع"
     }
+
+]
+export const products = [
+    {
+        id:1,
+        title:"ارز القيصر",
+        image:"/images/qaisar.png",
+        content:""
+    },
+    {
+        id:2,
+        title:"الارز ابو مفتاح",
+        image:"/images/ارز-ابو-مفتاح.png",
+        content:""
+    },
+    {
+        id:3,
+        title:"الارز البيت",
+        image:"/images/ارز-البيت.png",
+        content:""
+    },
+    {
+        id:4,
+        title:"الارز شماخ ",
+        image:"/images/ارز-شماخ.png",
+        content:""
+    },
+    {
+        id:5,
+        title:"الارز العطيه",
+        image:"/images/العطية.png",
+        content:""
+    },
+    {
+        id:12,
+        title:"الارز الفارس النبيل",
+        image:"/images/ارز-الفارس-النبيل.png",
+        content:""
+    },
+    {
+        id:6,
+        title:"تونة البيت",
+        image:"/images/التونه.png",
+        content:""
+    },
+    {
+        id:7,
+        title:"البازلاء",
+        image:"/images/بازلياء-خضراء.png",
+        content:""
+    },
+    {
+        id:8,
+        title:"فاصوليا البيت ",
+        image:"/images/فاصوليا-بيضاء.png",
+        content:""
+    },
+    {
+        id:9,
+        title:"  فاصوليا حمراء البيت",
+        image:"/images/فاصوليا-حمراء.png",
+        content:""
+    },
+    {
+        id:10,
+        title:"  فول البيت",
+        image:"/images/فول-البيت.png",
+        content:""
+    },
+    {
+        id:11,
+        title:"  معجون طمام البيت",
+        image:"/images/معجون-الطماطم.png",
+        content:""
+    },
+    {
+        id:13,
+        title:"دقيق خيرات اليمن",
+        image:"/images/خيرات-اليمن-موكب-اب.png",
+        content:""
+    },
+    {
+        id:14,
+        title:"قمح الخريف",
+        image:"/images/الخريف-موكب-اب.png",
+        content:""
+    },
 
 ]

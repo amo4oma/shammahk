@@ -40,6 +40,9 @@ const Header = () => {
               <a href="/grain" className="block px-5 py-3 text-gray-700 font-beiruti font-semibold hover:bg-primary/10 hover:text-primary rounded-xl transition-colors">
                 الشركة العربية لصوامع الغلال
               </a>
+              <a href="/leather" className="block px-5 py-3 text-gray-700 font-beiruti font-semibold hover:bg-primary/10 hover:text-primary rounded-xl transition-colors">
+                شركة شماخ للدباغة والصناعات الجلدية المحدودة
+              </a>
             </div>
           </div>
           <a href="/agencies" className="text-black text-xl font-semibold hover:text-primary transition-colors">وكالاتنا</a>
@@ -79,6 +82,7 @@ const Header = () => {
             {isSectorsOpen && (
               <div className="bg-gray-50">
                 <a href="/grain" className="block px-10 py-2 text-gray-600 hover:bg-gray-100 hover:text-primary transition-colors">الشركة العربية لصوامع الغلال</a>
+                <a href="/leather" className="block px-10 py-2 text-gray-600 hover:bg-gray-100 hover:text-primary transition-colors">شركة شماخ للدباغة والصناعات الجلدية المحدودة</a>
               </div>
             )}
           </div>
