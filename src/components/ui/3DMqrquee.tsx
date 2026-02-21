@@ -38,6 +38,10 @@ const reviews = [
         name: "rowenta",
         img: rowenta,
     },
+    {
+        name: "evershine",
+        img: '/images/evershineLogo.png',
+    },
 ]
 
 const firstRow = reviews.slice(0, reviews.length / 2)
@@ -57,9 +61,9 @@ const ReviewCard = ({
             className={cn(
                 "relative h-full w-fit cursor-pointer   ",
                 // light styles
-                "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+                "border-gray-950/10 bg-gray-950/1 hover:bg-gray-950/5",
                 // dark styles
-                "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+                "dark:border-gray-50/10 dark:bg-gray-50/10 dark:hover:bg-gray-50/15"
             )}
         >
             <div className="">

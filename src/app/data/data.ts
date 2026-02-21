@@ -103,3 +103,168 @@ export const products = [
     },
 
 ]
+
+export const cars = [
+     {
+        id:1,
+        title:"سيارة تيجو 4",
+        image:"/images/tego4.webp",
+        content:""
+    },
+     {
+        id:2,
+        title:"سيارة تيجو 7",
+        image:"/images/tego7.webp",
+        content:""
+    },
+     {
+        id:3,
+        title:"سيارة تيجو 8",
+        image:"/images/tego8.webp",
+        content:""
+    },
+     {
+        id:4,
+        title:"سيارة تيجو 8",
+        image:"/images/tego8.webp",
+        content:""
+    },
+     {
+        id:5,
+        title:"سيارة JMC grand avenue",
+        image:"/images/grand.png",
+        content:""
+    },
+     {
+        id:6,
+        title:"سيارة JMC grand avenue pro",
+        image:"/images/gradpro.png",
+        content:""
+    },
+     {
+        id:6,
+        title:"شاحنة JMC",
+        image:"/images/jmcTruck.png",
+        content:""
+    },
+    
+]
+export const electronics =[
+         {
+        id:1,
+        title:"LG oled TV ",
+        image:"/images/lgTV_OLED.png",
+        content:""
+    },
+         {
+        id:2,
+        title:"LG UHD AI TV ",
+        image:"/images/lgTV_50UA7700PUB.png",
+        content:""
+    },
+         {
+        id:3,
+        title:"LG QNED AI TV ",
+        image:"/images/lgTV-65QNED85AUA.png",
+        content:""
+    },
+         {
+        id:4,
+        title:"LG Refrigerators ",
+        image:"/images/lgRefrigerator1.png",
+        content:""
+    },
+         {
+        id:5,
+        title:"LG Refrigerators ",
+        image:"/images/lgRefrigerator2.png",
+        content:""
+    },
+         {
+        id:6,
+        title:"LG Refrigerators ",
+        image:"/images/lgRefrigerator3.png",
+        content:""
+    },
+         {
+        id:7,
+        title:"LG Washing Machine ",
+        image:"/images/lgLaundry.png",
+        content:""
+    },
+         {
+        id:8,
+        title:"القلايه الهوائيه من تيفال",
+        image:"/images/tefal-air.webp",
+        content:""
+    },
+         {
+        id:9,
+        title:"غسالة ملابس LG",
+        image:"/images/lg-washing.webp",
+        content:""
+    },
+         {
+        id:10,
+        title:"شاشات ويستبوينت",
+        image:"/images/wespointtv.webp",
+        content:""
+    },
+         {
+        id:11,
+        title:" خلاطات من ويستبوينت",
+        image:"/images/westpoint-multi.webp",
+        content:""
+    },
+         {
+        id:12,
+        title:"قدور الضغط من تيفال ",
+        image:"/images/westpoint-multi.webp",
+        content:""
+    },
+         {
+        id:12,
+        title:"طباخات كلاس",
+        image:"/images/klass-cooker.webp",
+        content:""
+    },
+         {
+        id:13,
+        title:"طباخات اريستون",
+        image:"/images/areston-cooker.webp",
+        content:""
+    },
+         {
+        id:14,
+        title:"طباخات اريستون",
+        image:"/images/areston-cooker2.webp",
+        content:""
+    },
+
+]
+export const energyAndBuildingMaterials = [
+    {
+        id:1,
+        title:"بطاريات الطاقة الشمسية من شركة ايفرشاين",
+        image:"/images/smart-series-battery.png",
+        content:""
+    },
+    {
+        id:2,
+        title:"بطاريات الطاقة الشمسية من شركة ايفرشاين",
+        image:"/images/download (2).png",
+        content:""
+    },
+    {
+        id:3,
+        title:"بطاريات الطاقة الشمسية من شركة ايفرشاين",
+        image:"/images/download (1).png",
+        content:""
+    },
+    {
+              id:4,
+        title:"حديد بناء",
+        image:"/images/iron.png",
+        content:""
+    }
+]
