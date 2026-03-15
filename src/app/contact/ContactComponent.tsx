@@ -2,9 +2,11 @@
 import SaherdHearoSection from "@/app/components/SaherdHearoSection";
 import RootLayout from "../../app/layout";
 import { motion } from "motion/react";
-import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, Loader2, CheckCircle, XCircle } from "lucide-react";
 import { useState } from "react";
 
+// Get your free access key at https://web3forms.com
+const WEB3FORMS_ACCESS_KEY = "c527fae6-15e7-4bde-b254-23a863543ed2";
 
 const ContactUs = () => {
     const [formData, setFormData] = useState({
@@ -14,11 +16,41 @@ const ContactUs = () => {
         subject: "",
         message: ""
     });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission
-        console.log("Form submitted:", formData);
+        setIsSubmitting(true);
+        setSubmitStatus('idle');
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    access_key: WEB3FORMS_ACCESS_KEY,
+                    from_name: formData.name,
+                    subject: formData.subject,
+                    email: formData.email,
+                    phone: formData.phone,
+                    message: formData.message,
+                }),
+            });
+
+            const result = await response.json();
+            if (result.success) {
+                setSubmitStatus('success');
+                setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+            setTimeout(() => setSubmitStatus('idle'), 5000);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -58,7 +90,7 @@ const ContactUs = () => {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti"
+                                        className="w-full text-primary  px-4 py-3 rounded-xl border-2 border-gray-200 placeholder:text-accent focus:border-primary focus:outline-none transition-colors font-beiruti"
                                         placeholder="أدخل اسمك الكامل"
                                     />
                                 </div>
@@ -74,7 +106,7 @@ const ContactUs = () => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti"
+                                            className="w-full px-4 py-3 text-primary placeholder:text-accent rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti"
                                             placeholder="example@email.com"
                                         />
                                     </div>
@@ -88,7 +120,7 @@ const ContactUs = () => {
                                             value={formData.phone}
                                             onChange={handleChange}
                                             required
-                                            className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti"
+                                            className="w-full px-4 py-3 text-primary placeholder:text-accent rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti"
                                             placeholder="+967 XXX XXX XXX"
                                         />
                                     </div>
@@ -104,7 +136,7 @@ const ContactUs = () => {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti"
+                                        className="w-full px-4 py-3 text-primary placeholder:text-accent rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti"
                                         placeholder="موضوع الرسالة"
                                     />
                                 </div>
@@ -119,20 +151,51 @@ const ContactUs = () => {
                                         onChange={handleChange}
                                         required
                                         rows={6}
-                                        className="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti resize-none"
+                                        className="w-full px-4 py-3 text-primary placeholder:text-accent rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors font-beiruti resize-none"
                                         placeholder="اكتب رسالتك هنا..."
                                     />
                                 </div>
 
                                 <motion.button
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
+                                    whileHover={!isSubmitting ? { scale: 1.02 } : {}}
+                                    whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                                     type="submit"
-                                    className="w-full bg-primary hover:bg-primary/90 text-white font-beiruti font-bold py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-3 text-lg"
+                                    disabled={isSubmitting}
+                                    className="w-full bg-primary hover:bg-primary/90 text-white font-beiruti font-bold py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-3 text-lg disabled:opacity-60 disabled:cursor-not-allowed"
                                 >
-                                    <Send size={24} />
-                                    إرسال الرسالة
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 size={24} className="animate-spin" />
+                                            جاري الإرسال...
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Send size={24} />
+                                            إرسال الرسالة
+                                        </>
+                                    )}
                                 </motion.button>
+
+                                {submitStatus === 'success' && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="flex items-center gap-2 text-green-600 font-beiruti font-semibold mt-4"
+                                    >
+                                        <CheckCircle size={20} />
+                                        تم إرسال رسالتك بنجاح! سنتواصل معك قريباً.
+                                    </motion.div>
+                                )}
+                                {submitStatus === 'error' && (
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="flex items-center gap-2 text-red-600 font-beiruti font-semibold mt-4"
+                                    >
+                                        <XCircle size={20} />
+                                        حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.
+                                    </motion.div>
+                                )}
                             </form>
                         </motion.div>
 
@@ -147,7 +210,7 @@ const ContactUs = () => {
                                 className="rounded-3xl overflow-hidden shadow-2xl h-64 md:h-80"
                             >
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.5891234567!2d44.2!3d15.35!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDIxJzAwLjAiTiA0NMKwMTInMDAuMCJF!5e0!3m2!1sen!2s!4v1234567890"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.5!2d44.20462939856887!3d15.363758137626544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTXCsDIxJzQ5LjUiTiA0NMKwMTInMTYuNyJF!5e0!3m2!1sen!2s!4v1234567890"
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
@@ -178,7 +241,7 @@ const ContactUs = () => {
                                             <p className="text-gray-700 font-beiruti leading-relaxed">
                                                 صنعاء، الجمهورية اليمنية
                                                 <br />
-                                                شارع الزبيري، مبنى شماخ
+                                               شارع القياده تقاطع شارع الحريه
                                             </p>
                                         </div>
                                     </div>
@@ -201,9 +264,9 @@ const ContactUs = () => {
                                                 الهاتف
                                             </h3>
                                             <p className="text-gray-700 font-beiruti leading-relaxed">
-                                                +967 1 234 567
+                                                 01-224700
                                                 <br />
-                                                +967 777 123 456
+                                            
                                             </p>
                                         </div>
                                     </div>
@@ -289,10 +352,10 @@ const ContactUs = () => {
                                     المكتب الرئيسي - صنعاء
                                 </h3>
                                 <p className="text-gray-700 font-beiruti mb-2">
-                                    شارع الزبيري، مبنى شماخ
+                                   شارع القياده تقاطع شارع الحريه
                                 </p>
                                 <p className="text-gray-600 font-beiruti">
-                                    هاتف: +967 1 234 567
+                                    هاتف:  224700-01
                                 </p>
                             </motion.div>
 
@@ -311,10 +374,10 @@ const ContactUs = () => {
                                     فرع عدن
                                 </h3>
                                 <p className="text-gray-700 font-beiruti mb-2">
-                                    المعلا، شارع الميناء
+                                   حي الشابات بالقرب من وزاره الماليه
                                 </p>
                                 <p className="text-gray-600 font-beiruti">
-                                    هاتف: +967 2 345 678
+                                    هاتف: 276073
                                 </p>
                             </motion.div>
 
@@ -333,10 +396,10 @@ const ContactUs = () => {
                                     فرع الحديدة
                                 </h3>
                                 <p className="text-gray-700 font-beiruti mb-2">
-                                    طريق جيزان، كيلو 25
+                                  شارع الميناء امام حديقه الشعب
                                 </p>
                                 <p className="text-gray-600 font-beiruti">
-                                    هاتف: +967 3 456 789
+                                    هاتف: 220092-03  
                                 </p>
                             </motion.div>
                         </div>

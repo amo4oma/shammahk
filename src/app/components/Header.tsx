@@ -19,7 +19,7 @@ const Header = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-white/80 w-[80%] rounded-3xl mx-auto mt-3 backdrop-blur-md shadow-md fixed translate-x-1/9  top-0 z-50"
+      className="bg-white/80 w-[80%] rounded-3xl mx-auto mt-3 backdrop-blur-md shadow-md fixed top-0 -translate-x-38 z-50"
       dir={language === 'ar' ? 'rtl' : 'ltr'}
     >
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">

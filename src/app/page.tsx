@@ -11,8 +11,13 @@ import EmailSubscribtion from './components/EmailSubscribtion';
 import CookieConsent from './components/CookieConsent';
 
 export const metadata: Metadata = {
-  title: 'مجموعة شماخ للتجاره',
-  description: 'مجموعة شماخ للتجاره',
+  title: 'الرئيسية',
+  description: 'مجموعة شماخ للتجارة - مجموعة يمنية رائدة تضم قطاعات السيارات (شيري، JMC)، الإلكترونيات (LG، تيفال)، المواد الغذائية، صوامع الغلال والمطاحن، الصناعات الجلدية، والطاقة ومواد البناء.',
+  openGraph: {
+    title: 'مجموعة شماخ للتجارة - رواد الجودة والتميز في اليمن',
+    description: 'مجموعة يمنية رائدة في قطاعات السيارات والإلكترونيات والمواد الغذائية والصناعات الجلدية وصوامع الغلال.',
+    url: 'https://test.shammakh.com',
+  },
 };
 export default function Home() {
   return (
